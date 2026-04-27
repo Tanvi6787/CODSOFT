@@ -1,2 +1,0 @@
-# CODSOFT
-Tech Internship Tasks
