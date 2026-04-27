@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 100px;
+    background: url("images/bg.jpg") no-repeat center/cover;
+    color: white;
+    height: 100vh;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero * {
+    position: relative;
+    z-index: 1;
+}
+
+.about-page {
+    background: url("images/about.jpg") no-repeat center/cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+.contact-page {
+    background: url("images/contact.jpg") no-repeat center/cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+.services-page {
+    background: url("images/service.jpg") no-repeat center/cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+.about-page::before,
+.contact-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 0;
+}
+
+main {
+    flex: 1;
+}
+
+.about, .services, .contact {
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.about, .contact {
+    background: rgba(255,255,255,0.9);
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+.services-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service-box {
+    background: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+    background: #ddd;
+}
+
+input, textarea {
+    width: 60%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    input, textarea {
+        width: 90%;
+    }
+}
